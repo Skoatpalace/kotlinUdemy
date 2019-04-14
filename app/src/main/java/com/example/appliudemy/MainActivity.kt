@@ -270,13 +270,13 @@ class MainActivity : AppCompatActivity() {
 
         //val button = findViewById<Button>(R.id.button_main) deprecated/obsolete
 
-        button_main.setOnClickListener{
+        button_country.setOnClickListener{
 
-            val intent = Intent(this, ConstructorActivity::class.java)
-            intent.action = Intent.ACTION_VIEW
+            val intent = Intent(this, CountryActivity::class.java)
+            /*intent.action = Intent.ACTION_VIEW
             intent.addCategory("UserViewer")
             intent.putExtra("name", "Bob")
-            intent.putExtra("age", 50)
+            intent.putExtra("age", 50)*/
             startActivity(intent)
         }
 
