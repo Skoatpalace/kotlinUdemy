@@ -9,6 +9,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".GenericActivity">
+        </activity>
+        <activity android:name=".NestedActivity">
+        </activity>
+        <activity android:name=".DataActivity">
+        </activity>
+        <activity android:name=".EncapsulationActivity">
+        </activity>
+        <activity android:name=".HeritageActivity">
+        </activity>
+        <activity android:name=".ConstructorActivity">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

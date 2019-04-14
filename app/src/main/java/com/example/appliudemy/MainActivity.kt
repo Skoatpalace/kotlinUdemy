@@ -1,7 +1,11 @@
 package com.example.appliudemy
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 
@@ -42,6 +46,7 @@ class Car(val wheelsCount: Int = 4) {
         }
     }
 }
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -241,5 +246,43 @@ class MainActivity : AppCompatActivity() {
         println("Le véhicule à ${car.wheelsCount} roues")
         car.honk()
         car.honkForWheels()
+
+        /*TODO appel de la class  code java*/
+
+        val marie = Admin()
+        //SET
+        marie.age = 20
+        marie.name = "Marie"
+
+        Log.i("MainActivity", "adresse de bob est ${marie.adress}")
+
+        /*TODO les logs du moins important au plus important*/
+
+        val TAG = "MainActivity"
+        Log.v(TAG, "Verbose message")
+        Log.d(TAG, "Debug message")
+        Log.i(TAG, "Info message")
+        Log.w(TAG, "Warning message")
+        Log.e(TAG, "Error message")
+        Log.println(Log.ASSERT, TAG, "Assert message")
+
+        /*TODO intent*/
+
+        //val button = findViewById<Button>(R.id.button_main) deprecated/obsolete
+
+        button_main.setOnClickListener{
+
+            val intent = Intent(this, ConstructorActivity::class.java)
+            intent.action = Intent.ACTION_VIEW
+            intent.addCategory("UserViewer")
+            intent.putExtra("name", "Bob")
+            intent.putExtra("age", 50)
+            startActivity(intent)
+        }
+
+
+
+
+
     }
 }
