@@ -4,10 +4,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.view.View
+import android.widget.Button
+import android.widget.Toast
 
 /*TODO recyclerView et CardView*/
 
-class CountryActivity : AppCompatActivity() {
+class CountryActivity : AppCompatActivity(), View.OnClickListener {
 
     var countries = arrayOf<String>("Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla",
         "Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas",
@@ -39,7 +42,7 @@ class CountryActivity : AppCompatActivity() {
         "United States","United States Minor Outlying Islands","Uruguay",
         "Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe")
 
-    val adapter = CountryAdapter(countries)
+    val adapter = CountryAdapter(countries, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +52,30 @@ class CountryActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
-
+        findViewById<Button>(R.id.update_button).setOnClickListener {updateCountries()}
     }
+
+    override fun onClick(view: View) {
+
+        if (view.tag != null){
+            val index = view.tag as Int
+            val country = countries[index]
+            Toast.makeText(this, "pays selectionné: $country", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    fun updateCountries(){
+
+        val lastLetter = countries[0].last()
+
+        for ((index, country) in countries.withIndex()){
+            if (lastLetter.isUpperCase()){
+                countries[index] = country.toLowerCase().capitalize()
+            }else{
+                countries[index] = country.toUpperCase()
+            }
+        }
+        adapter.notifyDataSetChanged()
+    }
+
 }
