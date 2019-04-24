@@ -9,6 +9,18 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".RequireCheckActivity">
+        </activity>
+        <activity android:name=".ExceptionActivity">
+        </activity>
+        <activity android:name=".LambdaActivity">
+        </activity>
+        <activity android:name=".HightOrderFunctionActivity">
+        </activity>
+        <activity android:name=".SealedActivity">
+        </activity>
+        <activity android:name=".EnumActivity">
+        </activity>
         <activity android:name=".CountryActivity">
         </activity>
         <activity android:name=".GenericActivity">
