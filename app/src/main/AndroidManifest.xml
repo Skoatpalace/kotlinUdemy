@@ -9,6 +9,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".UseFonctionActivity">
+        </activity>
+        <activity android:name=".ApplyActivity">
+        </activity>
+        <activity android:name=".FonctionExtensionActivity">
+        </activity>
+        <activity android:name=".LazyInitActivity">
+        </activity>
+        <activity android:name=".MapCollectionActivity">
+        </activity>
+        <activity android:name=".SetCollectionActivity">
+        </activity>
+        <activity android:name=".ListActivity">
+        </activity>
         <activity android:name=".RequireCheckActivity">
         </activity>
         <activity android:name=".ExceptionActivity">
